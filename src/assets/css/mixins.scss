@@ -1,0 +1,3 @@
+﻿@mixin trs($duration, $delay) {
+    transition: all $duration ease-out $delay;
+}

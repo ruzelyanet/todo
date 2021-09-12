@@ -9,7 +9,7 @@ const routes = [{
         path: '/login',
         name: 'login',
         component: () =>
-            import ( /* webpackChunkName: "login" */ '../views/Login.vue')
+            import ( /* webpackChunkName: "login" */ '../views/auth/Login.vue')
     },
 
     {
@@ -17,24 +17,19 @@ const routes = [{
         name: 'root',
         meta: { requiresAuth: true },
         component: () =>
-            import ( /* webpackChunkName: "root" */ '../views/App.vue'),
+            import ( /* webpackChunkName: "root" */ '../views/app/Index.vue'),
         redirect: { name: "Home" },
 
         children: [{
             path: 'home',
             name: 'Home',
             component: () =>
-                import ( /* webpackChunkName: "home" */ '../views/Home.vue'),
-        }, {
-            path: 'about',
-            name: 'about',
-            component: () =>
-                import ( /* webpackChunkName: "about" */ '../views/About.vue')
+                import ( /* webpackChunkName: "home" */ '../views/app/home/Index.vue'),
         }, {
             path: 'todo',
             name: 'todo',
             component: () =>
-                import ( /* webpackChunkName: "todo" */ '../views/Todo.vue')
+                import ( /* webpackChunkName: "todo" */ '../views/app/todo/Index.vue')
         }, {
             path: '*',
             name: 'any',

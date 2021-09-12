@@ -4,9 +4,23 @@ import router from './router'
 import store from './store'
 import BootstrapVue from 'bootstrap-vue'
 
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+import '@/assets/icons.js'
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import "./assets/css/vendor/bootstrap.min.css"
 import "./assets/css/styles.scss"
+
+import moment from 'moment'
+
+Vue.use(require('vue-moment'), {
+    moment
+})
+
+export const eventBus = new Vue()
 
 Vue.use(BootstrapVue)
 

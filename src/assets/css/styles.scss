@@ -1,21 +1,24 @@
-﻿@import './buttons.scss';
+﻿@import './mixins.scss';
+@import './buttons.scss';
 body {
     background: #eceef0;
-    display: flex;
-    align-items: center;
     height: 100vh;
+    padding: 1vh 0;
 }
 
 #app {
-    margin: auto 0;
+    margin: 9vh auto;
     height: 80vh;
     width: 340px;
     min-height: 600px;
-    margin: 0 auto;
     background: #fff;
     overflow-y: auto;
-    border-radius: 30px;
+    //border-radius: 30px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.app {
+    padding: 10px 0;
 }
 
 .login {
@@ -87,4 +90,72 @@ body {
 .was-validated .form-control:valid,
 .form-control.is-valid {
     background-image: none;
+}
+
+.todo {
+    &-group {
+        border-bottom: 1px solid #5081b1;
+        margin-bottom: 10px;
+        &-title {
+            font-weight: 700;
+            font-size: 13px;
+        }
+    }
+    // todo item
+    &-item {
+        border-bottom: 1px solid #ced4da;
+        padding: 6px 0;
+    }
+    &-btn-done {
+        line-height: 1px;
+        padding: 0 5px 0 0;
+    }
+    &-title {
+        width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 14px;
+    }
+    &-time {
+        font-weight: 700;
+        padding: 5px;
+        font-size: 14px;
+    }
+    &-date {
+        font-size: 12px;
+        font-weight: 700;
+    }
+}
+
+.search {
+    .form-control {
+        border-radius: 20px;
+        font-weight: 100;
+        font-size: 16px;
+    }
+}
+
+.btn-logout {
+    border: 1px solid #ced4da;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 0.3em;
+    line-height: 1px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    @include trs(0.2s, 0s);
+    font-size: 12px;
+    &:hover {
+        color: #fff;
+        background: #ced4da;
+    }
+}
+
+.panel-top {
+    margin-bottom: 10px;
 }

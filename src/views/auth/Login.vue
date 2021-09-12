@@ -41,11 +41,11 @@
 
 <script>
 import {getUsers} from '@/service'
-import {required, minLength, email} from "vuelidate/lib/validators";
+import {required, email} from "vuelidate/lib/validators";
 import {validationMixin} from "vuelidate";
 import jwt from "jsonwebtoken"
 
-import Input from '@/components/Input'
+import Input from '@/components/form/Input'
 
 export default {
   name: 'Login',
@@ -97,7 +97,7 @@ export default {
         this.process = true
         await this.getUsers().then(res => {
           this.process = false
-          const user = this.searchUser(res)
+          const user = this.searchUser(res) 
 
           user && this.createToken()
 
