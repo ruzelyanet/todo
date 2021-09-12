@@ -29,7 +29,20 @@ const routes = [{
             path: 'todo',
             name: 'todo',
             component: () =>
-                import ( /* webpackChunkName: "todo" */ '../views/app/todo/Index.vue')
+                import ( /* webpackChunkName: "todo" */ '../views/app/todo/Index.vue'),
+            redirect: { name: 'todo-list' },
+            children: [{
+                path: 'list',
+                name: 'todo-list',
+                component: () =>
+                    import ( /* webpackChunkName: "todo-list" */ '../views/app/todo/List.vue'),
+            }, {
+                path: ':id',
+                name: 'todo-item',
+                component: () =>
+                    import ( /* webpackChunkName: "todo-page" */ '../views/app/todo/TodoPage.vue'),
+                props: true
+            }]
         }, {
             path: '*',
             name: 'any',

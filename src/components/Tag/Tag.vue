@@ -5,16 +5,10 @@
 </template>
 
 <script>
-
 export default {
   props: {
     variant: {
       type: String
-    }
-  },
-  
-  data() {
-    return {
     }
   },
 
@@ -27,7 +21,7 @@ export default {
 
   methods: {
     clickItem() {
-      this.$emit('clickTag')
+      this.$emit('click')
     },
   }
 }

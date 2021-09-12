@@ -9,7 +9,6 @@
     <div v-else class="text-center py-4">
       There is no such task 🙅‍♂️
     </div>
-    
   </div>
 </template>
 
