@@ -15,5 +15,11 @@ npm run serve
 npm run build
 ```
 
+### environment variables
+```
+.env
+VUE_APP_URL=https://my-json-server.typicode.com/ruzelyanet/jsondb
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
