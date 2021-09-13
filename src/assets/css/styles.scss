@@ -470,3 +470,45 @@ body {
         }
     }
 }
+
+.user {
+    &-card {
+        &-head {
+            margin: -15px -15px 0;
+            padding: 15px;
+            background: #54595b;
+            color: #fff;
+            .panel-top {
+                color: #fff;
+                * {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    &-ava {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        overflow: hidden;
+        margin: 0 auto;
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    &-name {
+        font-weight: 100;
+        font-size: 18px;
+        text-align: center;
+    }
+    &-info-item {
+        border-bottom: 1px solid #54595b;
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+    &-info-icon {
+        width: 25px;
+        font-size: 15px;
+    }
+}

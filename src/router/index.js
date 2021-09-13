@@ -26,6 +26,11 @@ const routes = [{
             component: () =>
                 import ( /* webpackChunkName: "home" */ '../views/app/home/Index.vue'),
         }, {
+            path: 'profile',
+            name: 'profile',
+            component: () =>
+                import ( /* webpackChunkName: "profile" */ '../views/app/user/Profile.vue'),
+        }, {
             path: 'todo',
             name: 'todo',
             component: () =>
@@ -48,6 +53,11 @@ const routes = [{
                 component: () =>
                     import ( /* webpackChunkName: "todo-edit" */ '../views/app/todo/TodoEdit.vue'),
                 props: true
+            }, {
+                path: ':id/create',
+                name: 'todo-create',
+                component: () =>
+                    import ( /* webpackChunkName: "todo-create" */ '../views/app/todo/TodoCreate.vue')
             }]
         }, {
             path: '*',

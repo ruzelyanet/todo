@@ -97,20 +97,28 @@ export default {
         this.process = true
         await this.getUsers().then(res => {
           this.process = false
-          const user = this.searchUser(res) 
+          const user = this.searchUser(res)
 
-          user && this.createToken()
+          if(user) {
+            this.createToken()
+            this.saveUserId(user.id)
+            this.$router.replace({name: 'root'})
+          } else {
+            this.$notify("warning", 'There is no such user', '', {
+              duration: 3000,
+              permanent: false
+            });
+          }
 
-          this.$router.replace({name: 'root'})
         })
       }
 
     },
 
-    searchUser(users) {           
-      const user = users.filter((el, i) => {
+    searchUser(users) {      
+      const user = users.find((el, i) => {
         return el.email === this.form.email
-      })
+      })      
 
       return user
     },
@@ -118,6 +126,10 @@ export default {
     createToken() {    
       var token = jwt.sign({ foo: 'bar', iat: Math.floor(Date.now() / 1000) + 30 }, 'shhhhh');
       localStorage.setItem('jwt', token)      
+    },
+
+    saveUserId(id) {
+      localStorage.setItem('user', id)
     }
   },
 

@@ -1,7 +1,7 @@
 ﻿<template>
   <div class="app">
     <div class="container">
-      <top-panel />
+      <top-panel v-if="$route.name != 'profile'" />
 
       <router-view/>   
     </div>

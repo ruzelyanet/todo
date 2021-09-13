@@ -9,6 +9,10 @@
     </div>
 
     <todo-list :list="filterList" v-if="!process" />
+
+    <div class="text-center">      
+      <router-link :to="{name: 'todo-create'}" class="btn btn-link"><font-awesome-icon icon="plus" /></router-link>
+    </div>
   </div>
 </template>
 

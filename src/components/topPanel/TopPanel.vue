@@ -5,9 +5,9 @@
         <font-awesome-icon icon="arrow-left" />        
       </b-button>
       
-      <div class="btn-logout ml-auto">
-        <font-awesome-icon icon="user" />
-      </div>
+      <router-link :to="{name: 'profile'}" class="btn btn-link ml-auto" v-if="$route.name != 'profile'">
+        <font-awesome-icon icon="user"/>
+      </router-link>
     </div>
   </div>
 </template>

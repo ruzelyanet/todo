@@ -1,11 +1,7 @@
 ﻿<template>
   <div>
 
-    <b-form @submit.prevent="submit">
-      <b-form-group>
-        <b-form-input v-model="data.title" type="text" />
-      </b-form-group>
-
+    <b-form @submit.prevent="submit">      
       <b-form-group>
         <b-form-input v-model="data.title" type="text" />
       </b-form-group>
