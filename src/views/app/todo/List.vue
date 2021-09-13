@@ -8,7 +8,36 @@
       <c-tag v-for="(item, key) in filter" :key="key" @click="tagFilter(item)" :class="{'c-tag-checked': item.checked}">{{ item.type }}</c-tag>
     </div>
 
-    <todo-list :list="filterList" v-if="!process" />
+    <b-skeleton-wrapper :loading="process">
+      <template #loading>
+        <div class="py-2">
+          <b-skeleton />
+        </div>
+        <div class="py-2">
+          <b-skeleton />
+        </div>
+        <div class="py-2">
+          <b-skeleton />
+        </div>
+        <div class="py-2">
+          <b-skeleton />
+        </div>
+        <div class="py-2">
+          <b-skeleton />
+        </div>
+        <div class="py-2">
+          <b-skeleton />
+        </div>
+        <div class="py-2">
+          <b-skeleton />
+        </div>
+        <div class="py-2">
+          <b-skeleton />
+        </div>        
+      </template>
+
+      <todo-list :list="filterList" v-if="!process" />
+    </b-skeleton-wrapper>    
 
     <div class="text-center">      
       <router-link :to="{name: 'todo-create'}" class="btn btn-link"><font-awesome-icon icon="plus" /></router-link>
