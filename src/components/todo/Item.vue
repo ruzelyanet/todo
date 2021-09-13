@@ -7,18 +7,23 @@
     </div>
 
     <div>
-      <div class="todo-date">
-        {{ data.date | moment('ll') }}
-      </div>
-      <div class="todo-title">        
-        {{ data.title }}
-      </div>
+      <router-link :to="{name: 'todo-item', params: {id: data.id}}">
+        <div class="todo-date">
+          {{ data.date | moment('ll') }}
+        </div>
+        <div class="todo-title">        
+          {{ data.title }}
+        </div>
+      </router-link>
     </div>
 
     <div class="todo-time ml-auto">
       {{ data.time }}
     </div>
-      
+    
+    <div class="todo-actions">      
+      <b-button variant="link" class="text-danger" size="xs" pill @click="deleteTodo"><font-awesome-icon icon="trash" /></b-button>
+    </div>
   </div>
 </template>
 
@@ -41,6 +46,10 @@ export default ({
   methods: {
     switchDone() {      
       eventBus.$emit('switchDoneTodo', this.data)
+    },
+
+    deleteTodo() {      
+      eventBus.$emit('deleteTodo', this.data)
     }
   }
 

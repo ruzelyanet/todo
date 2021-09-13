@@ -41,6 +41,12 @@ const routes = [{
                 name: 'todo-item',
                 component: () =>
                     import ( /* webpackChunkName: "todo-page" */ '../views/app/todo/TodoPage.vue'),
+                props: true,
+            }, {
+                path: ':id/edit',
+                name: 'todo-edit',
+                component: () =>
+                    import ( /* webpackChunkName: "todo-edit" */ '../views/app/todo/TodoEdit.vue'),
                 props: true
             }]
         }, {

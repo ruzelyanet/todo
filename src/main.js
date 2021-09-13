@@ -14,6 +14,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import "./assets/css/vendor/bootstrap.min.css"
 import "./assets/css/styles.scss"
 
+import Notifications from './components/Notification'
+
+Vue.use(Notifications)
+
 import moment from 'moment'
 
 Vue.use(require('vue-moment'), {

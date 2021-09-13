@@ -1,8 +1,9 @@
 ﻿import http from './http'
 
-async function getDatesList(params) {
+async function deleteTodo(params) {
+    const { id } = params
     try {
-        const res = await http.get('dates', {
+        const res = await http.delete(`todo/${id}`, {
             params: {
                 ...params
             }
@@ -13,4 +14,4 @@ async function getDatesList(params) {
     }
 }
 
-export default getDatesList
+export default deleteTodo

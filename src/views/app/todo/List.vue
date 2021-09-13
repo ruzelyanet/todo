@@ -15,7 +15,7 @@
 <script>
 import List from '@/components/todo/List'
 import Search from '@/components/search/Search'
-import { getTodo, putTodo} from '@/service'
+import { getTodo, putTodo, deleteTodo} from '@/service'
 import { eventBus } from '@/main.js'
 import Tag from "@/components/Tag/Tag"
 
@@ -52,7 +52,6 @@ export default ({
         type: 'money', 
         checked: false
       }]
-      
     }
   },  
   
@@ -76,7 +75,7 @@ export default ({
     }, 
 
     tagFilter(data) {
-      data.checked = !data.checked      
+      data.checked = !data.checked
 
       if(data.checked) {
         this.types.push(data.type)
@@ -102,8 +101,17 @@ export default ({
         done: !data.done
       }).then((res) => {
         data.done = !data.done
+      })
+    })
+
+    eventBus.$on('deleteTodo', async data => {
+      await deleteTodo({
+        id: data.id
+      }).then(() => {
+        this.todo.splice(this.todo.indexOf(data), 1)
       })      
     })
+    
   }
 
 })

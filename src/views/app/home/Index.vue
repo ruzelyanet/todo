@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-      <font-awesome-icon icon="user-secret" />
+    
+    <router-link :to="{name: 'todo'}" class="btn btn-success btn-block">Todo <font-awesome-icon icon="list-ul" /></router-link>
+
   </div>
 </template>
 

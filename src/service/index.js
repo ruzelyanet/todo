@@ -1,11 +1,11 @@
 ﻿import getUsers from './getUsers'
 import getTodo from './getTodos'
-import getDatesList from './getDatesList'
 import putTodo from './putTodo'
+import deleteTodo from './deleteTodo'
 
 export {
     getUsers,
     getTodo,
-    getDatesList,
-    putTodo
+    putTodo,
+    deleteTodo
 }
